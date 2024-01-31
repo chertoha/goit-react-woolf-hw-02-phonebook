@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
 
 const { Component } = require('react');
@@ -26,3 +27,14 @@ class ContactList extends Component {
 }
 
 export default ContactList;
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      tel: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+  onDelete: PropTypes.func.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const { Component } = require('react');
 
 class Search extends Component {
@@ -13,3 +14,8 @@ class Search extends Component {
 }
 
 export default Search;
+
+Search.propTypes = {
+  value: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
+};

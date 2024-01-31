@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const { Component } = require('react');
 
 class ContactItem extends Component {
@@ -18,3 +20,9 @@ class ContactItem extends Component {
 }
 
 export default ContactItem;
+
+ContactItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  tel: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

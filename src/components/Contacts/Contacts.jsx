@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ContactList from 'components/ContactList';
 import { Component } from 'react';
 
@@ -15,3 +16,7 @@ class Contacts extends Component {
 }
 
 export default Contacts;
+
+Contacts.propTypes = {
+  children: PropTypes.node,
+};
