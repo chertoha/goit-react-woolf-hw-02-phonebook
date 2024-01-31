@@ -1,19 +1,15 @@
+import ContactList from 'components/ContactList';
 import { Component } from 'react';
 
 class Contacts extends Component {
   render() {
-    const { contacts } = this.props;
-
-    if (contacts.length === 0) return <p>There are no contacts here!</p>;
+    const { children, ...rest } = this.props;
 
     return (
-      <ul>
-        {contacts.map(({ id, name }) => (
-          <li key={id}>
-            <p>{name}</p>
-          </li>
-        ))}
-      </ul>
+      <div>
+        {children}
+        <ContactList {...rest} />
+      </div>
     );
   }
 }
