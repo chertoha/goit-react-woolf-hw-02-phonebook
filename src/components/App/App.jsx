@@ -5,6 +5,7 @@ import Search from 'components/Search';
 import Section from 'components/Section';
 import { Component } from 'react';
 import { filterList } from 'utils/filterList';
+import { MainHeading } from './App.styled';
 
 class App extends Component {
   state = {
@@ -55,7 +56,7 @@ class App extends Component {
     return (
       <div>
         <Container>
-          <h1>Phonebook</h1>
+          <MainHeading>Phonebook</MainHeading>
           <Section>
             <ContactForm addContact={this.addContact} />
           </Section>

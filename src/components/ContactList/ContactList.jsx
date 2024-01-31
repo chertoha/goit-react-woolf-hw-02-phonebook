@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
+import { Item, List } from './ContactList.styled';
+import Notification from 'components/Notification';
 
 const { Component } = require('react');
 
@@ -7,21 +9,21 @@ class ContactList extends Component {
   render() {
     const { contacts, onDelete } = this.props;
 
-    if (contacts.length === 0) return <p>No contacts</p>;
+    if (contacts.length === 0) return <Notification message="No contacts" />;
 
     return (
-      <ul>
+      <List>
         {contacts.map(({ id, ...rest }) => (
-          <li key={id}>
+          <Item key={id}>
             <ContactItem
               {...rest}
               onClick={() => {
                 onDelete(id);
               }}
             />
-          </li>
+          </Item>
         ))}
-      </ul>
+      </List>
     );
   }
 }

@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import { Field, Heading, Wrapper } from './Search.styled';
 const { Component } = require('react');
 
 class Search extends Component {
   render() {
     const { value, handler } = this.props;
     return (
-      <div>
-        <h3>Find contacts ny name</h3>
-        <input type="text" value={value} onChange={handler} />
-      </div>
+      <Wrapper>
+        <Heading>Find contacts ny name</Heading>
+        <Field type="text" value={value} onChange={handler} />
+      </Wrapper>
     );
   }
 }
