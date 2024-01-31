@@ -10,11 +10,13 @@ import {
   Submit,
 } from './ContactForm.styled';
 
+const initialState = {
+  name: '',
+  tel: '',
+};
+
 class ContactForm extends Component {
-  state = {
-    name: '',
-    tel: '',
-  };
+  state = initialState;
 
   onChangeHandler = e => {
     const { name, value } = e.target;
@@ -28,6 +30,7 @@ class ContactForm extends Component {
     const { name, tel } = e.target.elements;
 
     addContact({ id: nanoid(4), name: name.value, tel: tel.value });
+    this.setState(initialState);
   };
 
   render() {
