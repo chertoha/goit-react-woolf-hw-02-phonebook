@@ -1,25 +1,20 @@
 import PropTypes from 'prop-types';
 import { CardWrapper, Delete, Meta, Name, Tel } from './ContactList.styled';
 
-const { Component } = require('react');
+const ContactItem = ({ name, tel, onClick }) => {
+  return (
+    <CardWrapper>
+      <Meta>
+        <Name>{name}</Name>
+        <Tel>{tel}</Tel>
+      </Meta>
 
-class ContactItem extends Component {
-  render() {
-    const { name, tel, onClick } = this.props;
-    return (
-      <CardWrapper>
-        <Meta>
-          <Name>{name}</Name>
-          <Tel>{tel}</Tel>
-        </Meta>
-
-        <Delete type="button" onClick={onClick}>
-          Delete
-        </Delete>
-      </CardWrapper>
-    );
-  }
-}
+      <Delete type="button" onClick={onClick}>
+        Delete
+      </Delete>
+    </CardWrapper>
+  );
+};
 
 export default ContactItem;
 

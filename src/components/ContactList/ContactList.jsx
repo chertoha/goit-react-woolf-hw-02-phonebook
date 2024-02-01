@@ -3,30 +3,24 @@ import ContactItem from './ContactItem';
 import { Item, List } from './ContactList.styled';
 import Notification from 'components/Notification';
 
-const { Component } = require('react');
+const ContactList = ({ contacts, onDelete }) => {
+  if (contacts.length === 0) return <Notification message="No contacts" />;
 
-class ContactList extends Component {
-  render() {
-    const { contacts, onDelete } = this.props;
-
-    if (contacts.length === 0) return <Notification message="No contacts" />;
-
-    return (
-      <List>
-        {contacts.map(({ id, ...rest }) => (
-          <Item key={id}>
-            <ContactItem
-              {...rest}
-              onClick={() => {
-                onDelete(id);
-              }}
-            />
-          </Item>
-        ))}
-      </List>
-    );
-  }
-}
+  return (
+    <List>
+      {contacts.map(({ id, ...rest }) => (
+        <Item key={id}>
+          <ContactItem
+            {...rest}
+            onClick={() => {
+              onDelete(id);
+            }}
+          />
+        </Item>
+      ))}
+    </List>
+  );
+};
 
 export default ContactList;
 
