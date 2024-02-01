@@ -20,7 +20,7 @@ class ContactForm extends Component {
 
   onChangeHandler = e => {
     const { name, value } = e.target;
-    this.setState(state => ({ ...state, [name]: value }));
+    this.setState(prevState => ({ ...prevState, [name]: value }));
   };
 
   onSubmitHandler = e => {

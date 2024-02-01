@@ -30,21 +30,21 @@ class App extends Component {
       return;
     }
 
-    this.setState(state => ({
-      ...state,
-      contacts: [...state.contacts, contact],
+    this.setState(prevState => ({
+      ...prevState,
+      contacts: [...prevState.contacts, contact],
     }));
   };
 
   onChangeFilterHandler = e => {
     const { value } = e.target;
-    this.setState(state => ({ ...state, filter: value }));
+    this.setState(prevState => ({ ...prevState, filter: value }));
   };
 
   onDeleteContactHandler = contactId => {
-    this.setState(state => ({
-      ...state,
-      contacts: [...state.contacts.filter(({ id }) => id !== contactId)],
+    this.setState(prevState => ({
+      ...prevState,
+      contacts: [...prevState.contacts.filter(({ id }) => id !== contactId)],
     }));
   };
 
