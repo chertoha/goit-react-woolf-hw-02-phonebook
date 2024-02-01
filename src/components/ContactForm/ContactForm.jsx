@@ -27,9 +27,8 @@ class ContactForm extends Component {
     e.preventDefault();
 
     const { addContact } = this.props;
-    const { name, tel } = e.target.elements;
 
-    addContact({ id: nanoid(4), name: name.value, tel: tel.value });
+    addContact({ id: nanoid(4), ...this.state });
     this.setState(initialState);
   };
 
