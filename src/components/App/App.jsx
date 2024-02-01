@@ -22,7 +22,7 @@ class App extends Component {
 
   addContact = contact => {
     const hasContact = this.state.contacts.some(
-      ({ name }) => name === contact.name
+      ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
     );
 
     if (hasContact) {
